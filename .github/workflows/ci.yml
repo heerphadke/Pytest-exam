@@ -11,7 +11,6 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-
       - run: pip install -r requirements.txt
 
       - run: pytest --junitxml=report.xml || true
@@ -29,3 +28,4 @@ jobs:
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"Test Run Completed: $STATUS\"}" \
           $WEBHOOK
+
